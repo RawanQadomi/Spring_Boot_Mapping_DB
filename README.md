@@ -1,8 +1,8 @@
 # Spring_Boot_Mapping_DB
 
-## Create the Database**
+## Create the Database
 
-Install Docker and open it
+### Install Docker and open it
 Open terminal and run below commends
 ----
 docker-compose exec  mysql-development mysql -uroot -phelloworld testapp
