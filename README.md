@@ -20,7 +20,7 @@ Add downloaded files
 You should be installed DBeaver or MYSQLWorkBench
 open any of them then run below queries
 
-[mysql]
+### [mysql]
 ----
 CREATE Table l2_services (order_type VARCHAR(225), product_type VARCHAR(225), dim_group_id int, order_no TEXT, dim_bookingdate_id int, dim_store_id int, service_fee_code text, product_code text, dim_customer_id VARCHAR(255),	dim_language VARCHAR(255),	dim_totals_currency VARCHAR(255), dim_status_id VARCHAR(255), phone VARCHAR(255),	payment_amount int,	discount_amount int,	service_fee_amount int,base_amount int,	inputvat int,	outputvat int,	product_vat	int, selling_price	int, selling_price_vat	int, ibv int, iov_usd int, gbv int, gbv_usd int);
 
@@ -31,15 +31,14 @@ SET sql_mode = (SELECT REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', ''));
 
 ----
 
-====
-Importing Data
+### Importing Data
 ----
 open table from navigator right click and select import Data for each table selerately then it will import all Data
 ----
-====
 
 
-== Create the `application.properties` File
+
+### Create the `application.properties` File
 
 Spring Boot gives you defaults on all things. For example, the default database is `H2`.
 Consequently, when you want to use any other database, you must define the connection
@@ -48,13 +47,10 @@ attributes in the `application.properties` file.
 Create a resource file called `src/main/resources/application.properties`, as the
 following listing shows:
 
-====
-[source, java]
+
+### [java]
 ----
 include::complete/src/main/resources/application.properties[]
-----
-====
-
 Here, `spring.jpa.hibernate.ddl-auto` can be `none`, `update`, `create`, or `create-drop`.
 See the https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#configurations-hbmddl[Hibernate documentation] for details.
 
@@ -75,38 +71,38 @@ NOTE: It is a good security practice to, after your database is in a production 
 this to `none`, revoke all privileges from the MySQL user connected to the Spring
 application, and give the MySQL user only `SELECT`, `UPDATE`, `INSERT`, and `DELETE`. You
 can read more about this at the end of this guide.
+----
 
-== Create the `@Entity` Model
+### Create the `@Entity` Model
 
 You need to create the entity model, as the following listing
 (in `src/main/java/com/seera/database/entity/L1_Services.java`) shows:
 
-====
-[source,java,tabsize=2]
+
+[source,java]
 ----
 include::src/main/java/com/seera/database/entity/L1_Services.java[]
 ----
-====
+
 
 Hibernate automatically translates the entity into a table.
 
-== Create the Repository
+### Create the Repository
 
 You need to create the repository that holds user records, as the following listing
 (in `src/main/java/com/seera/database/repository/ExpectedServiceRepo.java`) shows:
 
-====
-[source,java,tabsize=2]
+[source,java]
 ----
 include::src/main/java/com/seera/database/repository/ExpectedServiceRepo.java[]
 ----
-====
+
 
 Spring automatically implements this repository interface in a bean that has the same name
 (with a change in the case -- it is called `userRepository`).
 
 
-== Test the Application
+### Test the Application
 
 Data Base Application updatd and added all details there how to run Application need to right click and run it will extract result from there
 
