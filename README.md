@@ -1,7 +1,6 @@
 # Spring_Boot_Mapping_DB
 
-[[initial]]
-== Create the Database
+== **Create the Database**
 
 Install Docker and open it
 Open terminal and run below commends
