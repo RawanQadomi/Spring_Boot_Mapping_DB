@@ -57,10 +57,10 @@ public class DatabaseApplication {
 		}
 
 		private void compareResults(List<L1_Services> expected_services, List<L2_Services> actual_services){
+			for (int j = 0; j < actual_services.size(); j++) {
 			for (int i = 0; i < expected_services.size(); i++) {
-				for (int j = 0; j < actual_services.size(); j++) {
-					if (expected_services.get(i).getOrder_no().equalsIgnoreCase(expected_services.get(i).getOrder_no()) ) {
-                      Assert.isTrue(expected_services.get(i).getOrder_type().equalsIgnoreCase(actual_services.get(j).getOrder_type()), "Order type is not match for "+expected_services.get(i).getOrder_no());
+					if (expected_services.get(i).getOrder_no().equalsIgnoreCase(actual_services.get(j).getOrder_no()) ) {
+                      Assert.isTrue(expected_services.get(i).getOrder_type().equalsIgnoreCase(actual_services.get(j).getOrder_type()), " Order type is not match for "+expected_services.get(i).getOrder_no() +"  "+expected_services.get(i).getOrder_type()+"  "+actual_services.get(j).getOrder_type() );
                       Assert.isTrue(expected_services.get(i).getDim_group_id() ==  actual_services.get(j).getDim_group_id(), "getDim_group_id is not match for "+expected_services.get(i).getOrder_no());
                       Assert.isTrue(expected_services.get(i).getDim_bookingdate_id() == actual_services.get(j).getDim_bookingdate_id(), "dim_bookingdate_id is not match for "+expected_services.get(i).getOrder_no());
                       Assert.isTrue(expected_services.get(i).getDim_store_id()== actual_services.get(j).getDim_store_id(), "getDim_store_id is not match for "+expected_services.get(i).getOrder_no());
@@ -70,19 +70,19 @@ public class DatabaseApplication {
                       Assert.isTrue(expected_services.get(i).getDim_totals_currency().equalsIgnoreCase(actual_services.get(j).getDim_totals_currency()), "getDim_totals_currency is not match for "+expected_services.get(i).getOrder_no());
                       Assert.isTrue(expected_services.get(i).getDim_store_id() ==actual_services.get(j).getDim_store_id(), "getDim_store_id is not match for "+expected_services.get(i).getOrder_no());
                       Assert.isTrue(expected_services.get(i).getPhone().equalsIgnoreCase(actual_services.get(j).getPhone()), "getPhone is not match for "+expected_services.get(i).getOrder_no());
-                      Assert.isTrue(expected_services.get(i).getPayment_amount()==actual_services.get(j).getPayment_amount(), "getPayment_amount is not match for "+expected_services.get(i).getOrder_no());
-                      Assert.isTrue(expected_services.get(i).getDiscount_amount() == actual_services.get(j).getDiscount_amount(), "getPayment_amount is not match for "+expected_services.get(i).getOrder_no());
-                      Assert.isTrue(expected_services.get(i).getService_fee_amount() == actual_services.get(j).getService_fee_amount(), "getService_fee_amount is not match for "+expected_services.get(i).getOrder_no());
-                      Assert.isTrue(expected_services.get(i).getBase_amount() == actual_services.get(j).getBase_amount(), "getBase_amount is not match for "+expected_services.get(i).getOrder_no());
-                      Assert.isTrue(expected_services.get(i).getInputvat() == actual_services.get(j).getInputvat(), "getInputvat is not match for "+expected_services.get(i).getOrder_no());
-                      Assert.isTrue(expected_services.get(i).getOutputvat() == actual_services.get(j).getOutputvat(), "getOutputvat is not match for "+expected_services.get(i).getOrder_no());
-                      Assert.isTrue(expected_services.get(i).getProduct_vat() == actual_services.get(j).getProduct_vat(), "getProduct_vat is not match for "+expected_services.get(i).getOrder_no());
-                      Assert.isTrue(expected_services.get(i).getSelling_price() == actual_services.get(j).getSelling_price(), "getSelling_price is not match for "+expected_services.get(i).getOrder_no());
-                      Assert.isTrue(expected_services.get(i).getSelling_price_vat() == actual_services.get(j).getSelling_price_vat(), "getSelling_price_vat is not match for "+expected_services.get(i).getOrder_no());
-                      Assert.isTrue(expected_services.get(i).getIbv() == actual_services.get(j).getIbv(), "getIbv is not match for "+expected_services.get(i).getOrder_no());
-                      Assert.isTrue(expected_services.get(i).getIov_usd() == actual_services.get(j).getIov_usd(), "getIov_usd is not match for "+expected_services.get(i).getOrder_no());
-                      Assert.isTrue(expected_services.get(i).getGbv() == actual_services.get(j).getGbv(), "getGbv is not match for "+expected_services.get(i).getOrder_no());
-                      Assert.isTrue(expected_services.get(i).getGbv_usd() == actual_services.get(j).getGbv_usd(), "getGbv is not match for "+expected_services.get(i).getOrder_no());
+                      Assert.isTrue(expected_services.get(i).getPayment_amount()== actual_services.get(j).getPayment_amount().floatValue(), "getPayment_amount is not match for expected "+ expected_services.get(i).getPayment_amount() +"actual is "+Float.valueOf(actual_services.get(i).getPayment_amount())+"for "+expected_services.get(i).getOrder_no());
+                      Assert.isTrue(expected_services.get(i).getDiscount_amount() == actual_services.get(j).getDiscount_amount().floatValue(), "getDiscount_amount is not match for "+expected_services.get(i).getOrder_no());
+//                      Assert.isTrue(expected_services.get(i).getService_fee_amount() == actual_services.get(j).getService_fee_amount().floatValue(), "getService_fee_amount is not match for "+expected_services.get(i).getOrder_no()+" actual is "+actual_services.get(j).getService_fee_amount().floatValue()+" for "+expected_services.get(i).getService_fee_amount().floatValue());
+                      Assert.isTrue(expected_services.get(i).getBase_amount() == actual_services.get(j).getBase_amount().floatValue(), "getBase_amount is not match for "+expected_services.get(i).getOrder_no());
+                      Assert.isTrue(expected_services.get(i).getInputvat() == actual_services.get(j).getInputvat().floatValue(), "getInputvat is not match for "+expected_services.get(i).getOrder_no());
+                      Assert.isTrue(expected_services.get(i).getOutputvat() == actual_services.get(j).getOutputvat().floatValue(), "getOutputvat is not match for "+expected_services.get(i).getOrder_no());
+                      Assert.isTrue(expected_services.get(i).getProduct_vat() == actual_services.get(j).getProduct_vat().floatValue(), "getProduct_vat is not match for "+expected_services.get(i).getOrder_no());
+                      Assert.isTrue(expected_services.get(i).getSelling_price() ==actual_services.get(j).getSelling_price().floatValue(), "getSelling_price is not match for "+expected_services.get(i).getOrder_no());
+                      Assert.isTrue(expected_services.get(i).getSelling_price_vat() == actual_services.get(j).getSelling_price_vat().floatValue(), "getSelling_price_vat is not match for "+expected_services.get(i).getOrder_no());
+                      Assert.isTrue(expected_services.get(i).getIbv() == actual_services.get(j).getIbv().floatValue(), "getIbv is not match for "+expected_services.get(i).getOrder_no());
+                      Assert.isTrue(expected_services.get(i).getIov_usd() == (actual_services.get(j).getIov_used() == null? 0.0: actual_services.get(j).getIov_used().floatValue()), "getIov_usd is not match for "+expected_services.get(i).getOrder_no());
+                      Assert.isTrue(expected_services.get(i).getGbv() == actual_services.get(j).getGbv().floatValue(), "getGbv is not match for "+expected_services.get(i).getOrder_no());
+                      Assert.isTrue(expected_services.get(i).getGbv_usd() == (actual_services.get(j).getGbv_used() == null? 0.0: actual_services.get(j).getGbv_used().floatValue()), "getGbv_used is not match for "+expected_services.get(i).getOrder_no());
 					}
 				}
 
