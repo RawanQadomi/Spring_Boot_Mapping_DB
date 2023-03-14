@@ -4,14 +4,15 @@
 
 ### **Install Docker and open it**
 Open terminal and run below commends
+
 ----
-docker-compose exec  mysql-development mysql -uroot -phelloworld testapp
-docker run --name=mk-mysql -p3306:3306 -v mysql-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
+1. docker-compose exec  mysql-development mysql -uroot -phelloworld testapp
+2. docker run --name=mk-mysql -p3306:3306 -v mysql-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
+Download excel sheet as csv files https://docs.google.com/spreadsheets/d/1q0cTH_bvofhrsPqAkciseXG4gDdUzk3qGlp44cRMFWc/edit#gid=457275569
 ----
 
-Download excel sheet as csv files https://docs.google.com/spreadsheets/d/1q0cTH_bvofhrsPqAkciseXG4gDdUzk3qGlp44cRMFWc/edit#gid=457275569
-Go to path 
 ----
+Go to path 
 /usr/local/var/lib/mysql-files
 ----
 Add downloaded files
