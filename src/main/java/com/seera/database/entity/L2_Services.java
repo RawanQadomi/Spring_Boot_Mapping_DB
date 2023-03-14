@@ -17,8 +17,8 @@ public class L2_Services {
     private String product_type;
     private Integer dim_group_id;
     private String order_no;
-    private Integer dim_bookingdate_id;
-    private Integer dim_store_id;
+    private int dim_bookingdate_id;
+    private int dim_store_id;
     private String service_fee_code;
     private String product_code;
     private String dim_customer_id;
@@ -40,7 +40,7 @@ public class L2_Services {
     private Integer selling_price;
     private Integer selling_price_vat;
     private Integer ibv;
-    private Integer iov_used;
+    private Double iov_used;
     private Integer gbv;
-    private Integer gbv_used;
+    private Double gbv_used;
 }

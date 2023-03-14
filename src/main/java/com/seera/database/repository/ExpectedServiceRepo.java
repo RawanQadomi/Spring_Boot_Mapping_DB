@@ -1,99 +1,86 @@
 package com.seera.database.repository;
 
+import com.seera.database.entity.L1_Services;
 import com.seera.database.entity.L2_Services;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.security.PublicKey;
 import java.util.List;
 
 @Repository
-public interface ExpectedServiceRepo extends JpaRepository<L2_Services, String> {
 
-        @Query(value = " SELECT\n" +
-                "\tls.order_type ,\n" +
-                "\tls.dim_group_id,\n" +
-                "\tls.order_no,\n" +
-                "\tls.dim_bookingdate_id ,\n" +
-                "\tls.dim_store_id ,\n" +
-                "\tls.dim_customer_id,\n" +
-                "\tls.dim_language,\n" +
-                "\tls.dim_totals_currency,\n" +
-                "\tls.dim_status_id ,\n" +
-                "\tls.phone,\n" +
-                "\tls.payment_amount ,\n" +
-                "\tls.discount_amount ,\n" +
-                "\tls.base_amount,\n" +
-                "\tls.inputvat,\n" +
-                "\tls.outputvat,\n" +
-                "\tls.product_vat,\n" +
-                "\tls.selling_price,\n" +
-                "\tls.selling_price_vat,\n" +
-                "\tls.ibv,\n" +
-                "\t(ls.ibv * ls.conversion_rate_usd) as 'iov_usd',\n" +
-                "\tls.gbv,\n" +
-                "\t(ls.gbv * ls.conversion_rate_usd) as 'gbv_usd'\n" +
-                "from\n" +
-                "\tl1_services ls where ls.order_type = ls.product_type GROUP by order_no ",nativeQuery = true)
-        public List<L2_Services> getL2_serviceResultsInitial();
+public interface ExpectedServiceRepo extends JpaRepository<L1_Services, String> {
+    @Query(value = "SELECT\n" +
+            "\tls.order_type ,\n" +
+            "\tls.product_type ,\n" +
+            "\tls.dim_group_id,\n" +
+            "\tls.order_no,\n" +
+            "\tls.dim_bookingdate_id ,\n" +
+            "\tls.dim_store_id ,\n" +
+            "\tls.dim_customer_id,\n" +
+            "\tls.dim_language,\n" +
+            "\tls.dim_totals_currency,\n" +
+            "\tls.dim_status_id ,\n" +
+            "\tls.phone,\n" +
+            "\tls.product_code,\n" +
+            "\t'null' as 'service_fee_code',\n" +
+            "\t0 as 'service_fee_amount',\n" +
+            "\tls.product_name,\n" +
+            "\tls.ahs_group_name,\n" +
+            "\tls.payment_amount ,\n" +
+            "\tls.discount_amount ,\n" +
+            "\tls.base_amount,\n" +
+            "\tls.inputvat,\n" +
+            "\tls.outputvat,\n" +
+            "\tls.product_vat,\n" +
+            "\tls.conversion_rate_sar,\n" +
+            "\tls.selling_price,\n" +
+            "\tls.selling_price_vat,\n" +
+            "\tls.conversion_rate_usd,\n" +
+            "\tls.ibv,\n" +
+            "\t(ls.ibv * ls.conversion_rate_usd) as 'iov_usd',\n" +
+            "\tls.gbv,\n" +
+            "\t(ls.gbv * ls.conversion_rate_usd) as 'gbv_usd'\n" +
+            "from\n" +
+            "\tl1_services ls where product_type != 'rule' GROUP by ls.order_no ;",nativeQuery = true)
+    public List<L1_Services> getL1_serviceResultsInitial();
 
-        @Query(value = "SELECT\n" +
-                "\tls.order_no ,\n" +
-                "\t\tWHEN ls.order_no in (\n" +
-                "\t\tselect\n" +
-                "\t\t\torder_no\n" +
-                "\t\tfrom\n" +
-                "\t\t\tl1_services ls3\n" +
-                "\t\tWHERE\n" +
-                "\t\t\tls3.product_type = 'rule'\n" +
-                "\t\tGROUP by\n" +
-                "\t\t\tls3.order_no\n" +
-                "\t\tHAVING\n" +
-                "\t\t\tcount(order_no) > 1 ) THEN ls.product_code\n" +
-                "\t\tELSE 'null'\n" +
-                "\tEND as 'service_fee_code'\n" +
-                "\t\n" +
-                "from\n" +
-                "\tl1_services ls\n" +
-                "group by\n" +
-                "\torder_no\n" +
-                "\torder by  product_type,\n" +
-                "\torder_type ;\n", nativeQuery = true)
-        public List<L2_Services> getServiceFeesResult();
-
-        @Query(value="SELECT\n" +
-                "\t case\n" +
-                "\t\tWHEN ls.order_no in (\n" +
-                "\t\tselect\n" +
-                "\t\t\torder_no\n" +
-                "\t\tfrom\n" +
-                "\t\t\tl1_services ls3\n" +
-                "\t\tWHERE\n" +
-                "\t\t\tls3.product_type = 'rule'\n" +
-                "\t\tGROUP by\n" +
-                "\t\t\tls3.order_no\n" +
-                "\t\tHAVING\n" +
-                "\t\t\tcount(order_no) > 1 ) THEN selling_price\n" +
-                "\t\tELSE 0\n" +
-                "\tEND as 'service_fee_amount'\n" +
-                "from\n" +
-                "\tl1_services ls\n" +
-                "group by\n" +
-                "\torder_no\n" +
-                "\torder by  product_type,\n" +
-                "\torder_type ;", nativeQuery = true)
-        public List<L2_Services> getServiceAmountFees();
-
-        @Query(value="SELECT\n" +
-                "\torder_no,\n" +
-                "\tselling_price ,\n" +
-                "\tproduct_code\n" +
-                "from\n" +
-                "\tl1_services ls\n" +
-                "where\n" +
-                "\tproduct_type = 'rule'", nativeQuery = true)
-        public List<L2_Services> getServiceFees();
-
-    }
+    @Query(value = "SELECT\n" +
+            "\tls.order_type ,\n" +
+            "\tls.product_type ,\n" +
+            "\tls.dim_group_id,\n" +
+            "\tls.order_no,\n" +
+            "\tls.dim_bookingdate_id ,\n" +
+            "\tls.dim_store_id ,\n" +
+            "\tls.dim_customer_id,\n" +
+            "\tls.dim_language,\n" +
+            "\tls.dim_totals_currency,\n" +
+            "\tls.dim_status_id ,\n" +
+            "\tls.phone,\n" +
+            "\tls.product_code,\n" +
+            "\tls.product_code as 'service_fee_code',\n" +
+            "\tls.selling_price as 'service_fee_amount',\n" +
+            "\tls.product_name,\n" +
+            "\tls.ahs_group_name,\n" +
+            "\tls.payment_amount ,\n" +
+            "\tls.discount_amount ,\n" +
+            "\tls.base_amount,\n" +
+            "\tls.inputvat,\n" +
+            "\tls.outputvat,\n" +
+            "\tls.product_vat,\n" +
+            "\tls.conversion_rate_sar,\n" +
+            "\tls.selling_price,\n" +
+            "\tls.selling_price_vat,\n" +
+            "\tls.conversion_rate_usd,\n" +
+            "\tls.ibv,\n" +
+            "\t(ls.ibv * ls.conversion_rate_usd) as 'iov_usd',\n" +
+            "\tls.gbv,\n" +
+            "\t(ls.gbv * ls.conversion_rate_usd) as 'gbv_usd'\n" +
+            "from\n" +
+            "\tl1_services ls where product_type = 'rule' GROUP by ls.order_no having\n" +
+            "\tCOUNT(order_no) > 1;",nativeQuery = true)
+    public List<L1_Services> getL1_serviceFee();
 
 }
