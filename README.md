@@ -19,8 +19,8 @@ Add downloaded files
 
 You should be installed DBeaver or MYSQLWorkBench
 open any of them then run below queries
-====
-[source, mysql]
+
+[mysql]
 ----
 CREATE Table l2_services (order_type VARCHAR(225), product_type VARCHAR(225), dim_group_id int, order_no TEXT, dim_bookingdate_id int, dim_store_id int, service_fee_code text, product_code text, dim_customer_id VARCHAR(255),	dim_language VARCHAR(255),	dim_totals_currency VARCHAR(255), dim_status_id VARCHAR(255), phone VARCHAR(255),	payment_amount int,	discount_amount int,	service_fee_amount int,base_amount int,	inputvat int,	outputvat int,	product_vat	int, selling_price	int, selling_price_vat	int, ibv int, iov_usd int, gbv int, gbv_usd int);
 
@@ -30,7 +30,6 @@ SET GLOBAL local_infile=TRUE;
 SET sql_mode = (SELECT REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', ''));
 
 ----
-====
 
 ====
 Importing Data
