@@ -48,7 +48,7 @@ Create a resource file called `src/main/resources/application.properties`, as th
 following listing shows:
 
 
-### [java]
+### [JAVA, Spring Boot]
 ----
 include::complete/src/main/resources/application.properties[]
 Here, `spring.jpa.hibernate.ddl-auto` can be `none`, `update`, `create`, or `create-drop`.
@@ -77,26 +77,20 @@ can read more about this at the end of this guide.
 
 You need to create the entity model, as the following listing
 (in `src/main/java/com/seera/database/entity/L1_Services.java`) shows:
-
-
-[source,java]
 ----
-include::src/main/java/com/seera/database/entity/L1_Services.java[]
+include::src/main/java/com/seera/database/entity/L1_Services.java
 ----
-
-
 Hibernate automatically translates the entity into a table.
 
-### Create the Repository
 
+### Create the Repository
 You need to create the repository that holds user records, as the following listing
 (in `src/main/java/com/seera/database/repository/ExpectedServiceRepo.java`) shows:
 
-[source,java]
+[JAVA, Spring Boot]
 ----
-include::src/main/java/com/seera/database/repository/ExpectedServiceRepo.java[]
+include::src/main/java/com/seera/database/repository/ExpectedServiceRepo.java
 ----
-
 
 Spring automatically implements this repository interface in a bean that has the same name
 (with a change in the case -- it is called `userRepository`).
