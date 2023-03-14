@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.seera.data.task.TaskApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.503 s <<< FAILURE! - in com.seera.data.task.TaskApplicationTests
+testGetOrders(com.seera.data.task.TaskApplicationTests)  Time elapsed: 0.013 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "com.seera.data.task.service.L2_servicesRepository.getL2_serviceResults()" because "this.l2_servicesRepository" is null
+	at com.seera.data.task.TaskApplicationTests.testGetOrders(TaskApplicationTests.java:38)
+
