@@ -30,13 +30,11 @@ public class L2_Services {
 
     private Integer payment_amount;
     private Integer discount_amount;
-    private Integer service_fee_amount;
+    private Float service_fee_amount;
     private Integer base_amount;
-
     private Integer inputvat;
     private Integer outputvat;
     private Integer product_vat;
-
     private Integer selling_price;
     private Integer selling_price_vat;
     private Integer ibv;

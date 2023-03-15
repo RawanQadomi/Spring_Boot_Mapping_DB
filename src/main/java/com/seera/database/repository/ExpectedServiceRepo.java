@@ -61,7 +61,7 @@ public interface ExpectedServiceRepo extends JpaRepository<L1_Services, String> 
             "\tls.phone,\n" +
             "\tls.product_code,\n" +
             "\tls.product_code as 'service_fee_code',\n" +
-            "\tls.selling_price as 'service_fee_amount',\n" +
+            "\t0.0 as  'service_fee_amount',\n" +
             "\tls.product_name,\n" +
             "\tls.ahs_group_name,\n" +
             "\tls.payment_amount ,\n" +

@@ -49,6 +49,7 @@ public class DatabaseApplication {
 	}
 
 	@PostConstruct
+	@Test(groups = "regression")
 	private void test(){
 		l1_Services.addAll(expectedServiceRepo.getL1_serviceResultsInitial());
 		services_fees.addAll(expectedServiceRepo.getL1_serviceFee());
@@ -63,8 +64,7 @@ public class DatabaseApplication {
 		for (int i = 0; i < l1_services_data.size(); i++) {
 					if (l1_services_data.get(i).getOrder_no().equalsIgnoreCase(fee_services.get(j).getOrder_no()) ) {
 						l1_services_data.get(i).setService_fee_code(fee_services.get(j).getProduct_code());
-						l1_services_data.get(j).setService_fee_amount(fee_services.get(j).getSelling_price());
-
+						l1_services_data.get(i).setService_fee_amount(fee_services.get(j).getSelling_price());
 					}
 			}
 		}
@@ -72,11 +72,11 @@ public class DatabaseApplication {
 		}
 
 		private void compareResults(List<L1_Services> expected_services, List<L2_Services> actual_services){
-
+			Assert.assertEquals(expected_services.size(),actual_services.size(), " Length of Expected and actual list are match ");
 			for (int j = 0; j < actual_services.size(); j++) {
 			for (int i = 0; i < expected_services.size(); i++) {
 					if (expected_services.get(i).getOrder_no().equalsIgnoreCase(actual_services.get(j).getOrder_no()) ) {
-                      Assert.assertEquals(expected_services.get(i).getOrder_type(),actual_services.get(j).getOrder_type(), " Order type is not match for "+expected_services.get(i).getOrder_no() +"  "+expected_services.get(i).getOrder_type()+"  "+actual_services.get(j).getOrder_type() );
+                      Assert.assertEquals(expected_services.get(i).getOrder_type(),actual_services.get(j).getOrder_type(), " Order type is not match for "+expected_services.get(i).getOrder_no() );
                       Assert.assertEquals(expected_services.get(i).getDim_group_id().intValue(),  actual_services.get(j).getDim_group_id(), "getDim_group_id is not match for "+expected_services.get(i).getOrder_no());
                       Assert.assertEquals(expected_services.get(i).getDim_bookingdate_id().intValue(), actual_services.get(j).getDim_bookingdate_id(), "dim_bookingdate_id is not match for "+expected_services.get(i).getOrder_no());
                       Assert.assertEquals(expected_services.get(i).getDim_store_id().intValue(), actual_services.get(j).getDim_store_id(), "getDim_store_id is not match for "+expected_services.get(i).getOrder_no());
@@ -88,7 +88,7 @@ public class DatabaseApplication {
                       Assert.assertEquals(expected_services.get(i).getPhone(),actual_services.get(j).getPhone(), "getPhone is not match for "+expected_services.get(i).getOrder_no());
                       Assert.assertEquals(expected_services.get(i).getPayment_amount().floatValue(), actual_services.get(j).getPayment_amount().floatValue(), "getPayment_amount is not match for expected "+ expected_services.get(i).getPayment_amount() +"actual is "+Float.valueOf(actual_services.get(i).getPayment_amount())+"for "+expected_services.get(i).getOrder_no());
                       Assert.assertEquals(expected_services.get(i).getDiscount_amount().floatValue(), actual_services.get(j).getDiscount_amount().floatValue(), "getDiscount_amount is not match for "+expected_services.get(i).getOrder_no());
-                    Assert.assertEquals(expected_services.get(i).getService_fee_amount().floatValue(),  actual_services.get(j).getService_fee_amount().floatValue(), "getService_fee_amount is not match for "+expected_services.get(i).getOrder_no()+" actual is "+actual_services.get(j).getService_fee_amount().floatValue()+" for "+expected_services.get(i).getService_fee_amount().floatValue());
+					  Assert.assertEquals(expected_services.get(i).getService_fee_amount().floatValue(), actual_services.get(j).getService_fee_amount().floatValue(), "getService_fee_amount is not match for "+expected_services.get(i).getOrder_no());
                       Assert.assertEquals(expected_services.get(i).getBase_amount().floatValue(), actual_services.get(j).getBase_amount().floatValue(), "getBase_amount is not match for "+expected_services.get(i).getOrder_no());
                       Assert.assertEquals(expected_services.get(i).getInputvat().floatValue(), actual_services.get(j).getInputvat().floatValue(), "getInputvat is not match for "+expected_services.get(i).getOrder_no());
                       Assert.assertEquals(expected_services.get(i).getOutputvat().floatValue(), actual_services.get(j).getOutputvat().floatValue(), "getOutputvat is not match for "+expected_services.get(i).getOrder_no());
@@ -104,6 +104,4 @@ public class DatabaseApplication {
 
 			}
 		}
-
-
 }
