@@ -34,7 +34,7 @@ public class L1_Services {
     private Float product_vat;
     private Float selling_price;
     private Float selling_price_vat;
-    private Integer conversion_rate_sar;
+    private int conversion_rate_sar;
     private Float ibv;
     private Float gbv;
 

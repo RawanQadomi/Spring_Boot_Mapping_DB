@@ -15,7 +15,7 @@ public class L2_Services {
     private String id;
     private String order_type;
     private String product_type;
-    private Integer dim_group_id;
+    private int dim_group_id;
     private String order_no;
     private int dim_bookingdate_id;
     private int dim_store_id;
