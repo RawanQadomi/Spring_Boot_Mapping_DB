@@ -38,7 +38,7 @@ public class L2_Services {
     private Integer selling_price;
     private Integer selling_price_vat;
     private Integer ibv;
-    private Double iov_used;
+    private Float iov_usd;
     private Integer gbv;
-    private Double gbv_used;
+    private Float gbv_usd;
 }
