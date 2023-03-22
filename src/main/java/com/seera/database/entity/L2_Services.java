@@ -10,9 +10,6 @@ import javax.persistence.*;
 @Table(name = "l2_services")
 public class L2_Services {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
     private String order_type;
     private String product_type;
     private int dim_group_id;
@@ -26,6 +23,9 @@ public class L2_Services {
     private String dim_totals_currency;
 
     private String dim_status_id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String phone;
 
     private Integer payment_amount;
