@@ -39,10 +39,11 @@ public interface ExpectedServiceRepo extends JpaRepository<L1_Services, String> 
             "\tls.selling_price,\n" +
             "\tls.selling_price_vat,\n" +
             "\tls.conversion_rate_usd,\n" +
-            "\tls.ibv,\n" +
-            "\t(ls.ibv * ls.conversion_rate_usd) as 'iov_usd',\n" +
-            "\tls.gbv,\n" +
-            "\t(ls.gbv * ls.conversion_rate_usd) as 'gbv_usd'\n" +
+            "\tIF(ls.ibv is null, 0.00, ls.ibv ) as 'ibv',\n" +
+            "\tIF(ls.ibv is null, 0.00, ibv * ls.conversion_rate_usd ) as 'iov_usd',\n" +
+//            "\t(ibv * ls.conversion_rate_usd) as 'iov_usd',\n" +
+            "\tIF(ls.gbv is NULL, 0.00, ls.gbv ) as 'gbv',\n" +
+            "\tIF(ls.gbv is NULL, 0.00, gbv * ls.conversion_rate_usd) as 'gbv_usd'\n" +
             "from\n" +
             "\tl1_services ls where product_type != 'rule' GROUP by ls.order_no ;",nativeQuery = true)
     public List<L1_Services> getL1_serviceResultsInitial();
@@ -74,9 +75,9 @@ public interface ExpectedServiceRepo extends JpaRepository<L1_Services, String> 
             "\tls.selling_price,\n" +
             "\tls.selling_price_vat,\n" +
             "\tls.conversion_rate_usd,\n" +
-            "\tls.ibv,\n" +
+            "\tIF(ls.ibv is null, 0.00, ls.ibv ) as 'ibv',\n" +
             "\t(ls.ibv * ls.conversion_rate_usd) as 'iov_usd',\n" +
-            "\tls.gbv,\n" +
+            "\tIF(ls.gbv is null, 0.00, ls.gbv ) as 'gbv',\n" +
             "\t(ls.gbv * ls.conversion_rate_usd) as 'gbv_usd'\n" +
             "from\n" +
             "\tl1_services ls where product_type = 'rule' GROUP by ls.order_no having\n" +

@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta charset='utf-8'>
+<title>TestNG Report</title>
+<style type="text/css">
+table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}
+td,th {border:1px solid #009;padding:.25em .5em}
+.result th {vertical-align:bottom}
+.param th {padding-left:1em;padding-right:1em}
+.param td {padding-left:.5em;padding-right:2em}
+.stripe td,.stripe th {background-color: #E6EBF9}
+.numi,.numi_attn {text-align:right}
+.total td {font-weight:bold}
+.passedodd td {background-color: #0A0}
+.passedeven td {background-color: #3F3}
+.skippedodd td {background-color: #CCC}
+.skippedodd td {background-color: #DDD}
+.failedodd td,.numi_attn {background-color: #F33}
+.failedeven td,.stripe .numi_attn {background-color: #D00}
+.stacktrace {white-space:pre;font-family:monospace}
+.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}
+</style>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="testOverview">
+<tr><th>Test</th><th>Methods<br/>Passed</th><th>Scenarios<br/>Passed</th><th># skipped</th><th># failed</th><th>Total<br/>Time</th><th>Included<br/>Groups</th><th>Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em"><a href="#t1">/Users/rawan.ismail/Workspace/Spring_Boot_Mapping_DB</a></td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">3.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="methodOverview" id="summary">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr id="t1"><th colspan="5">/Users/rawan.ismail/Workspace/Spring_Boot_Mapping_DB &#8212; failed</th></tr>
+<tr class="failedodd"><td>com.seera.database.testingScenarios</td><td><a href="#m1"><b>test</b>  </a></td><td class="numi">1</td><td>1679924159354</td><td class="numi">372</td></tr>
+</table>
+<h1>/Users/rawan.ismail/Workspace/Spring_Boot_Mapping_DB</h1>
+<h2 id="m1">com.seera.database.testingScenarios:test</h2>
+<div>
+<div class="stacktrace">java.lang.AssertionError: expected [] but found [ getIov_usd is not match for V22101609081000 expected: 69.87 Actual: 69
+ getGbv_usd is not match for V22101609081000 expected: 69.87 Actual: 69
+ getIov_usd is not match for R23021627021000 expected: 73.34 Actual: 73
+ getIbv is not match for CR22101546311000 expected: 635 Actual: 3570
+ getIov_usd is not match for CR22101546311000 expected: 169.35 Actual: 952
+ getGbv_usd is not match for CR22101546311000 expected: 169.35 Actual: 3570
+ getGbv_usd is not match for CR22101546311000 expected: 169.35 Actual: 952
+ getIbv is not match for V22121542771000 expected: 104 Actual: 635
+ getIov_usd is not match for V22121542771000 expected: 27.73 Actual: 169
+ getGbv_usd is not match for V22121542771000 expected: 27.73 Actual: 635
+ getGbv_usd is not match for V22121542771000 expected: 27.73 Actual: 169
+ getIbv is not match for R23020591861000 expected: 260 Actual: 104
+ getIov_usd is not match for R23020591861000 expected: 69.34 Actual: 27
+ getGbv_usd is not match for R23020591861000 expected: 69.34 Actual: 104
+ getGbv_usd is not match for R23020591861000 expected: 69.34 Actual: 27
+ getIbv is not match for R23020461731000 expected: 3120 Actual: 260
+ getIov_usd is not match for R23020461731000 expected: 832.1 Actual: 69
+ getGbv_usd is not match for R23020461731000 expected: 832.1 Actual: 260
+ getGbv_usd is not match for R23020461731000 expected: 832.1 Actual: 69
+ getIbv is not match for R23010549061000 expected: 225 Actual: 3120
+ getIov_usd is not match for R23010549061000 expected: 60 Actual: 832
+ getGbv_usd is not match for R23010549061000 expected: 60 Actual: 3120
+ getGbv_usd is not match for R23010549061000 expected: 60 Actual: 832
+ getIbv is not match for T22081855501000 expected: 1040 Actual: 225
+ getIov_usd is not match for T22081855501000 expected: 277.36 Actual: 60
+ getGbv_usd is not match for T22081855501000 expected: 277.36 Actual: 225
+ getGbv_usd is not match for T22081855501000 expected: 277.36 Actual: 60
+ getIbv is not match for R23012531631000 expected: 1240 Actual: 117
+ getIov_usd is not match for R23012531631000 expected: 330.7 Actual: 31
+ getGbv_usd is not match for R23012531631000 expected: 330.7 Actual: 117
+ getGbv_usd is not match for R23012531631000 expected: 330.7 Actual: 31
+ getIbv is not match for TR22102774271000 expected: 1170 Actual: 1040
+ getIov_usd is not match for TR22102774271000 expected: 312.03 Actual: 277
+ getGbv_usd is not match for TR22102774271000 expected: 312.03 Actual: 1040
+ getGbv_usd is not match for TR22102774271000 expected: 312.03 Actual: 277
+ getIbv is not match for T22100433341000 expected: 113 Actual: 1240
+ getIov_usd is not match for T22100433341000 expected: 30.13 Actual: 330
+ getGbv_usd is not match for T22100433341000 expected: 30.13 Actual: 1240
+ getGbv_usd is not match for T22100433341000 expected: 30.13 Actual: 330
+ getIbv is not match for R22080996221000 expected: 2733 Actual: 445
+ getIov_usd is not match for R22080996221000 expected: 728.89 Actual: 118
+ getGbv_usd is not match for R22080996221000 expected: 728.89 Actual: 445
+ getGbv_usd is not match for R22080996221000 expected: 728.89 Actual: 118
+ getIbv is not match for T22081362241000 expected: 395 Actual: 1170
+ getIov_usd is not match for T22081362241000 expected: 105.34 Actual: 312
+ getGbv_usd is not match for T22081362241000 expected: 105.34 Actual: 1170
+ getGbv_usd is not match for T22081362241000 expected: 105.34 Actual: 312
+ getIbv is not match for R23011543901000 expected: 152 Actual: 113
+ getIov_usd is not match for R23011543901000 expected: 40.53 Actual: 30
+ getGbv_usd is not match for R23011543901000 expected: 40.53 Actual: 113
+ getGbv_usd is not match for R23011543901000 expected: 40.53 Actual: 30
+ getIbv is not match for CR22120136061000 expected: 400 Actual: 2733
+ getIov_usd is not match for CR22120136061000 expected: 106.68 Actual: 728
+ getGbv_usd is not match for CR22120136061000 expected: 106.68 Actual: 2733
+ getGbv_usd is not match for CR22120136061000 expected: 106.68 Actual: 728
+ getIbv is not match for V23021225291000 expected: 4185 Actual: 395
+ getIov_usd is not match for V23021225291000 expected: 1116.13 Actual: 105
+ getGbv_usd is not match for V23021225291000 expected: 0 Actual: 395
+ getGbv_usd is not match for V23021225291000 expected: 0 Actual: 105
+ getIbv is not match for IDL22090931401000 expected: 269 Actual: 152
+ getIov_usd is not match for IDL22090931401000 expected: 71.74 Actual: 40
+ getGbv_usd is not match for IDL22090931401000 expected: 71.74 Actual: 152
+ getGbv_usd is not match for IDL22090931401000 expected: 71.74 Actual: 40
+ getIbv is not match for CS22112070041000 expected: 404 Actual: 400
+ getIov_usd is not match for CS22112070041000 expected: 107.74 Actual: 106
+ getGbv_usd is not match for CS22112070041000 expected: 107.74 Actual: 400
+ getGbv_usd is not match for CS22112070041000 expected: 107.74 Actual: 106
+ getIbv is not match for CS22112070041000 expected: 404 Actual: 400
+ getIov_usd is not match for CS22112070041000 expected: 107.74 Actual: 106
+ getGbv_usd is not match for CS22112070041000 expected: 107.74 Actual: 400
+ getGbv_usd is not match for CS22112070041000 expected: 107.74 Actual: 106
+ getIbv is not match for T23020741681015 expected: 2200 Actual: 4185
+ getIov_usd is not match for T23020741681015 expected: 586.73 Actual: 1116
+ getGbv_usd is not match for T23020741681015 expected: 586.73 Actual: 0
+ getGbv_usd is not match for T23020741681015 expected: 586.73 Actual: 0
+ getIbv is not match for R22101051621000 expected: 800 Actual: 269
+ getIov_usd is not match for R22101051621000 expected: 213.36 Actual: 71
+ getGbv_usd is not match for R22101051621000 expected: 213.36 Actual: 269
+ getGbv_usd is not match for R22101051621000 expected: 213.36 Actual: 71
+ getIbv is not match for R22120689031000 expected: 1470 Actual: 404
+ getIov_usd is not match for R22120689031000 expected: 392.04 Actual: 107
+ getGbv_usd is not match for R22120689031000 expected: 392.04 Actual: 404
+ getGbv_usd is not match for R22120689031000 expected: 392.04 Actual: 107
+ getIbv is not match for R22092084411000 expected: 400 Actual: 2200
+ getIov_usd is not match for R22092084411000 expected: 106.68 Actual: 586
+ getGbv_usd is not match for R22092084411000 expected: 106.68 Actual: 2200
+ getGbv_usd is not match for R22092084411000 expected: 106.68 Actual: 586
+ getIbv is not match for R22121287271000 expected: 714 Actual: 800
+ getIov_usd is not match for R22121287271000 expected: 190.42 Actual: 213
+ getGbv_usd is not match for R22121287271000 expected: 190.42 Actual: 800
+ getGbv_usd is not match for R22121287271000 expected: 190.42 Actual: 213
+ getIbv is not match for TR23021961091000 expected: 124 Actual: 1470
+ getIov_usd is not match for TR23021961091000 expected: 33.07 Actual: 392
+ getGbv_usd is not match for TR23021961091000 expected: 33.07 Actual: 1470
+ getGbv_usd is not match for TR23021961091000 expected: 33.07 Actual: 392
+ getIbv is not match for V22112930931000 expected: 429 Actual: 400
+ getIov_usd is not match for V22112930931000 expected: 114.41 Actual: 106
+ getGbv_usd is not match for V22112930931000 expected: 114.41 Actual: 400
+ getGbv_usd is not match for V22112930931000 expected: 114.41 Actual: 106
+ getIbv is not match for R22092621671000 expected: 22400 Actual: 714
+ getIov_usd is not match for R22092621671000 expected: 5974.08 Actual: 190
+ getGbv_usd is not match for R22092621671000 expected: 5974.08 Actual: 714
+ getGbv_usd is not match for R22092621671000 expected: 5974.08 Actual: 190
+ getIbv is not match for R23020834421000 expected: 350 Actual: 124
+ getIov_usd is not match for R23020834421000 expected: 93.34 Actual: 33
+ getGbv_usd is not match for R23020834421000 expected: 93.34 Actual: 124
+ getGbv_usd is not match for R23020834421000 expected: 93.34 Actual: 33
+ getIbv is not match for R22102519791000 expected: 222 Actual: 429
+ getIov_usd is not match for R22102519791000 expected: 59.2 Actual: 114
+ getGbv_usd is not match for R22102519791000 expected: 59.2 Actual: 429
+ getGbv_usd is not match for R22102519791000 expected: 59.2 Actual: 114
+ getIbv is not match for R23011045181000 expected: 111 Actual: 22400
+ getIov_usd is not match for R23011045181000 expected: 29.6 Actual: 5973
+ getGbv_usd is not match for R23011045181000 expected: 29.6 Actual: 22400
+ getGbv_usd is not match for R23011045181000 expected: 29.6 Actual: 5973
+ getIbv is not match for T22093056771000 expected: 62 Actual: 350
+ getIov_usd is not match for T22093056771000 expected: 16.53 Actual: 93
+ getGbv_usd is not match for T22093056771000 expected: 16.53 Actual: 350
+ getGbv_usd is not match for T22093056771000 expected: 16.53 Actual: 93
+ getIbv is not match for R22102336631000 expected: 152 Actual: 222
+ getIov_usd is not match for R22102336631000 expected: 40.53 Actual: 59
+ getGbv_usd is not match for R22102336631000 expected: 40.53 Actual: 222
+ getGbv_usd is not match for R22102336631000 expected: 40.53 Actual: 59
+ getIbv is not match for R23011260851000 expected: 800 Actual: 111
+ getIov_usd is not match for R23011260851000 expected: 213.36 Actual: 29
+ getGbv_usd is not match for R23011260851000 expected: 213.36 Actual: 111
+ getGbv_usd is not match for R23011260851000 expected: 213.36 Actual: 29
+ getIbv is not match for T22113054481000 expected: 900 Actual: 62
+ getIov_usd is not match for T22113054481000 expected: 240.02 Actual: 16
+ getGbv_usd is not match for T22113054481000 expected: 240.02 Actual: 62
+ getGbv_usd is not match for T22113054481000 expected: 240.02 Actual: 16
+ getIbv is not match for IDL22082323461000 expected: 400 Actual: 152
+ getIov_usd is not match for IDL22082323461000 expected: 106.68 Actual: 40
+ getGbv_usd is not match for IDL22082323461000 expected: 106.68 Actual: 152
+ getGbv_usd is not match for IDL22082323461000 expected: 106.68 Actual: 40
+ getIbv is not match for R22080632211000 expected: 400 Actual: 800
+ getIov_usd is not match for R22080632211000 expected: 106.68 Actual: 213
+ getGbv_usd is not match for R22080632211000 expected: 106.68 Actual: 800
+ getGbv_usd is not match for R22080632211000 expected: 106.68 Actual: 213
+ getIbv is not match for T22121542631000 expected: 260 Actual: 900
+ getIov_usd is not match for T22121542631000 expected: 69.34 Actual: 240
+ getGbv_usd is not match for T22121542631000 expected: 69.34 Actual: 900
+ getGbv_usd is not match for T22121542631000 expected: 69.34 Actual: 240
+ getIbv is not match for CS22111746631000 expected: 450 Actual: 400
+ getIov_usd is not match for CS22111746631000 expected: 120.01 Actual: 106
+ getGbv_usd is not match for CS22111746631000 expected: 120.01 Actual: 400
+ getGbv_usd is not match for CS22111746631000 expected: 120.01 Actual: 106
+ getIbv is not match for CS23022325831000 expected: 449 Actual: 400
+ getIov_usd is not match for CS23022325831000 expected: 119.74 Actual: 106
+ getGbv_usd is not match for CS23022325831000 expected: 119.74 Actual: 400
+ getGbv_usd is not match for CS23022325831000 expected: 119.74 Actual: 106
+ getIbv is not match for R23021631161000 expected: 331 Actual: 986
+ getIov_usd is not match for R23021631161000 expected: 88.27 Actual: 263
+ getGbv_usd is not match for R23021631161000 expected: 88.27 Actual: 986
+ getGbv_usd is not match for R23021631161000 expected: 88.27 Actual: 263
+ getIbv is not match for T22082804381000 expected: 225 Actual: 260
+ getIov_usd is not match for T22082804381000 expected: 60 Actual: 69
+ getGbv_usd is not match for T22082804381000 expected: 60 Actual: 260
+ getGbv_usd is not match for T22082804381000 expected: 60 Actual: 69
+ getIbv is not match for T23021222071000 expected: 394 Actual: 450
+ getIov_usd is not match for T23021222071000 expected: 105.07 Actual: 120
+ getGbv_usd is not match for T23021222071000 expected: 105.07 Actual: 450
+ getGbv_usd is not match for T23021222071000 expected: 105.07 Actual: 120
+ getIbv is not match for V22081044881000 expected: 736 Actual: 449
+ getIov_usd is not match for V22081044881000 expected: 196.29 Actual: 119
+ getGbv_usd is not match for V22081044881000 expected: 196.29 Actual: 449
+ getGbv_usd is not match for V22081044881000 expected: 196.29 Actual: 119
+ getIbv is not match for R22121544171000 expected: 152 Actual: 331
+ getIov_usd is not match for R22121544171000 expected: 40.53 Actual: 88
+ getGbv_usd is not match for R22121544171000 expected: 40.53 Actual: 331
+ getGbv_usd is not match for R22121544171000 expected: 40.53 Actual: 88
+ getIbv is not match for T22082358021000 expected: 158 Actual: 225
+ getIov_usd is not match for T22082358021000 expected: 42.13 Actual: 60
+ getGbv_usd is not match for T22082358021000 expected: 42.13 Actual: 225
+ getGbv_usd is not match for T22082358021000 expected: 42.13 Actual: 60
+ getIbv is not match for TR22102237531000 expected: 886 Actual: 1850
+ getIov_usd is not match for TR22102237531000 expected: 236.29 Actual: 493
+ getGbv_usd is not match for TR22102237531000 expected: 236.29 Actual: 1850
+ getGbv_usd is not match for TR22102237531000 expected: 236.29 Actual: 493
+ getIbv is not match for V22112176751000 expected: 30000 Actual: 394
+ getIov_usd is not match for V22112176751000 expected: 8001 Actual: 105
+ getGbv_usd is not match for V22112176751000 expected: 8001 Actual: 394
+ getGbv_usd is not match for V22112176751000 expected: 8001 Actual: 105
+ getIbv is not match for R22101233221000 expected: 6600 Actual: 736
+ getIov_usd is not match for R22101233221000 expected: 1760.21 Actual: 196
+ getGbv_usd is not match for R22101233221000 expected: 1760.21 Actual: 736
+ getGbv_usd is not match for R22101233221000 expected: 1760.21 Actual: 196
+ getIbv is not match for IDL22082343011000 expected: 269 Actual: 152
+ getIov_usd is not match for IDL22082343011000 expected: 71.74 Actual: 40
+ getGbv_usd is not match for IDL22082343011000 expected: 71.74 Actual: 152
+ getGbv_usd is not match for IDL22082343011000 expected: 71.74 Actual: 40
+ getIbv is not match for V22111547431000 expected: 13500 Actual: 158
+ getIov_usd is not match for V22111547431000 expected: 3600.44 Actual: 42
+ getGbv_usd is not match for V22111547431000 expected: 0 Actual: 158
+ getGbv_usd is not match for V22111547431000 expected: 0 Actual: 42
+ getIbv is not match for V23020207481000 expected: 404 Actual: 886
+ getIov_usd is not match for V23020207481000 expected: 107.74 Actual: 236
+ getGbv_usd is not match for V23020207481000 expected: 107.74 Actual: 886
+ getGbv_usd is not match for V23020207481000 expected: 107.74 Actual: 236
+ getIbv is not match for P22093058551000 expected: 55 Actual: 30000
+ getIov_usd is not match for P22093058551000 expected: 14.66 Actual: 8000
+ getGbv_usd is not match for P22093058551000 expected: 14.66 Actual: 30000
+ getGbv_usd is not match for P22093058551000 expected: 14.66 Actual: 8000
+ getIbv is not match for T22101918071000 expected: 298 Actual: 6600
+ getIov_usd is not match for T22101918071000 expected: 79.47 Actual: 1760
+ getGbv_usd is not match for T22101918071000 expected: 79.47 Actual: 6600
+ getGbv_usd is not match for T22101918071000 expected: 79.47 Actual: 1760
+ getIbv is not match for R22100855671000 expected: 271 Actual: 269
+ getIov_usd is not match for R22100855671000 expected: 72.27 Actual: 71
+ getGbv_usd is not match for R22100855671000 expected: 72.27 Actual: 269
+ getGbv_usd is not match for R22100855671000 expected: 72.27 Actual: 71
+ getIbv is not match for P22081168101000 expected: 10808 Actual: 13500
+ getIov_usd is not match for P22081168101000 expected: 2882.49 Actual: 3600
+ getGbv_usd is not match for P22081168101000 expected: 2882.49 Actual: 0
+ getGbv_usd is not match for P22081168101000 expected: 2882.49 Actual: 0
+ getIbv is not match for R23011576631000 expected: 29420 Actual: 404
+ getIov_usd is not match for R23011576631000 expected: 7846.31 Actual: 107
+ getGbv_usd is not match for R23011576631000 expected: 0 Actual: 404
+ getGbv_usd is not match for R23011576631000 expected: 0 Actual: 107
+ getIbv is not match for I23021830211000 expected: 800 Actual: 55
+ getIov_usd is not match for I23021830211000 expected: 213.36 Actual: 14
+ getGbv_usd is not match for I23021830211000 expected: 213.36 Actual: 55
+ getGbv_usd is not match for I23021830211000 expected: 213.36 Actual: 14
+ getIbv is not match for T23022540431000 expected: 273 Actual: 298
+ getIov_usd is not match for T23022540431000 expected: 72.8 Actual: 79
+ getGbv_usd is not match for T23022540431000 expected: 72.8 Actual: 298
+ getGbv_usd is not match for T23022540431000 expected: 72.8 Actual: 79
+ getIbv is not match for R22101143951000 expected: 738 Actual: 271
+ getIov_usd is not match for R22101143951000 expected: 196.82 Actual: 72
+ getGbv_usd is not match for R22101143951000 expected: 196.82 Actual: 271
+ getGbv_usd is not match for R22101143951000 expected: 196.82 Actual: 72
+ getIbv is not match for CR22110219331000 expected: 965 Actual: 10808
+ getIov_usd is not match for CR22110219331000 expected: 257.36 Actual: 2882
+ getGbv_usd is not match for CR22110219331000 expected: 257.36 Actual: 10808
+ getGbv_usd is not match for CR22110219331000 expected: 257.36 Actual: 2882
+ getIbv is not match for CR22082172991000 expected: 152 Actual: 29420
+ getIov_usd is not match for CR22082172991000 expected: 40.53 Actual: 7845
+ getGbv_usd is not match for CR22082172991000 expected: 40.53 Actual: 0
+ getGbv_usd is not match for CR22082172991000 expected: 40.53 Actual: 0
+ getIbv is not match for T23011023841000 expected: 0 Actual: 800
+ getIov_usd is not match for T23011023841000 expected: 0 Actual: 213
+ getGbv_usd is not match for T23011023841000 expected: 35.47 Actual: 800
+ getGbv_usd is not match for T23011023841000 expected: 35.47 Actual: 213
+ getIbv is not match for R22102851491000 expected: 248 Actual: 273
+ getIov_usd is not match for R22102851491000 expected: 66.14 Actual: 73
+ getGbv_usd is not match for R22102851491000 expected: 66.14 Actual: 273
+ getGbv_usd is not match for R22102851491000 expected: 66.14 Actual: 73
+ getIbv is not match for V22080934591000 expected: 1122 Actual: 738
+ getIov_usd is not match for V22080934591000 expected: 299.23 Actual: 196
+ getGbv_usd is not match for V22080934591000 expected: 299.23 Actual: 738
+ getGbv_usd is not match for V22080934591000 expected: 299.23 Actual: 196
+ getIbv is not match for R23011003541000 expected: 400 Actual: 965
+ getIov_usd is not match for R23011003541000 expected: 106.68 Actual: 257
+ getGbv_usd is not match for R23011003541000 expected: 106.68 Actual: 965
+ getGbv_usd is not match for R23011003541000 expected: 106.68 Actual: 257
+ getIov_usd is not match for IDL22082119991000 expected: 40.53 Actual: 40
+ getGbv_usd is not match for IDL22082119991000 expected: 40.53 Actual: 40
+ getIbv is not match for R22081104911000 expected: 59 Actual: 798
+ getIov_usd is not match for R22081104911000 expected: 15.73 Actual: 212
+ getGbv_usd is not match for R22081104911000 expected: 15.73 Actual: 798
+ getGbv_usd is not match for R22081104911000 expected: 15.73 Actual: 212
+ getIbv is not match for R23020755721000 expected: 776 Actual: 248
+ getIov_usd is not match for R23020755721000 expected: 206.95 Actual: 66
+ getGbv_usd is not match for R23020755721000 expected: 206.95 Actual: 248
+ getGbv_usd is not match for R23020755721000 expected: 206.95 Actual: 66
+ getIbv is not match for V23012660721001 expected: 10030 Actual: 1122
+ getIov_usd is not match for V23012660721001 expected: 2675 Actual: 293
+ getGbv_usd is not match for V23012660721001 expected: 2675 Actual: 1122
+ getGbv_usd is not match for V23012660721001 expected: 2675 Actual: 293
+ getIbv is not match for CS22102640811000 expected: 56 Actual: 400
+ getIov_usd is not match for CS22102640811000 expected: 14.93 Actual: 106
+ getGbv_usd is not match for CS22102640811000 expected: 14.93 Actual: 400
+ getGbv_usd is not match for CS22102640811000 expected: 14.93 Actual: 106
+ getIbv is not match for IDL22111681961000 expected: 600 Actual: 152
+ getIov_usd is not match for IDL22111681961000 expected: 160.02 Actual: 40
+ getGbv_usd is not match for IDL22111681961000 expected: 160.02 Actual: 152
+ getGbv_usd is not match for IDL22111681961000 expected: 160.02 Actual: 40
+ getIbv is not match for I22120675581002 expected: 91 Actual: 59
+ getIov_usd is not match for I22120675581002 expected: 24.26 Actual: 1
+ getGbv_usd is not match for I22120675581002 expected: 0 Actual: 59
+ getGbv_usd is not match for I22120675581002 expected: 0 Actual: 1
+ getIbv is not match for CS22112070041000 expected: 404 Actual: 400
+ getIov_usd is not match for CS22112070041000 expected: 107.74 Actual: 106
+ getGbv_usd is not match for CS22112070041000 expected: 107.74 Actual: 400
+ getGbv_usd is not match for CS22112070041000 expected: 107.74 Actual: 106
+ getIbv is not match for CS22112070041000 expected: 404 Actual: 400
+ getIov_usd is not match for CS22112070041000 expected: 107.74 Actual: 106
+ getGbv_usd is not match for CS22112070041000 expected: 107.74 Actual: 400
+ getGbv_usd is not match for CS22112070041000 expected: 107.74 Actual: 106
+ getIbv is not match for CR22111668721000 expected: 399 Actual: 5122
+ getIov_usd is not match for CR22111668721000 expected: 106.41 Actual: 1366
+ getGbv_usd is not match for CR22111668721000 expected: 106.41 Actual: 5122
+ getGbv_usd is not match for CR22111668721000 expected: 106.41 Actual: 1366
+ getIbv is not match for TR22120573971000 expected: 865 Actual: 776
+ getIov_usd is not match for TR22120573971000 expected: 230.69 Actual: 206
+ getGbv_usd is not match for TR22120573971000 expected: 230.69 Actual: 776
+ getGbv_usd is not match for TR22120573971000 expected: 230.69 Actual: 206
+ getIbv is not match for T23021163641000 expected: 222 Actual: 10030
+ getIov_usd is not match for T23021163641000 expected: 59.2 Actual: 2674
+ getGbv_usd is not match for T23021163641000 expected: 0 Actual: 10030
+ getGbv_usd is not match for T23021163641000 expected: 0 Actual: 2674
+ getIbv is not match for I23022414231001 expected: 520 Actual: 56
+ getIov_usd is not match for I23022414231001 expected: 138.68 Actual: 14
+ getGbv_usd is not match for I23022414231001 expected: 138.68 Actual: 56
+ getGbv_usd is not match for I23022414231001 expected: 138.68 Actual: 14
+ getIbv is not match for T22093008571000 expected: 152 Actual: 600
+ getIov_usd is not match for T22093008571000 expected: 40.53 Actual: 160
+ getGbv_usd is not match for T22093008571000 expected: 40.53 Actual: 600
+ getGbv_usd is not match for T22093008571000 expected: 40.53 Actual: 160
+ getIbv is not match for R22100441701000 expected: 104 Actual: 91
+ getIov_usd is not match for R22100441701000 expected: 27.73 Actual: 24
+ getGbv_usd is not match for R22100441701000 expected: 27.73 Actual: 0
+ getGbv_usd is not match for R22100441701000 expected: 27.73 Actual: 0
+ getIbv is not match for R22100701231000 expected: 139 Actual: 149
+ getIov_usd is not match for R22100701231000 expected: 37.07 Actual: 39
+ getGbv_usd is not match for R22100701231000 expected: 37.07 Actual: 0
+ getGbv_usd is not match for R22100701231000 expected: 37.07 Actual: 0
+ getIbv is not match for R23012245801000 expected: 562 Actual: 399
+ getIov_usd is not match for R23012245801000 expected: 149.88 Actual: 106
+ getGbv_usd is not match for R23012245801000 expected: 149.88 Actual: 399
+ getGbv_usd is not match for R23012245801000 expected: 149.88 Actual: 106
+ getIbv is not match for R22111165251000 expected: 290 Actual: 865
+ getIov_usd is not match for R22111165251000 expected: 77.34 Actual: 230
+ getGbv_usd is not match for R22111165251000 expected: 77.34 Actual: 865
+ getGbv_usd is not match for R22111165251000 expected: 77.34 Actual: 230
+ getIbv is not match for R22080472891000 expected: 1217 Actual: 222
+ getIov_usd is not match for R22080472891000 expected: 324.57 Actual: 59
+ getGbv_usd is not match for R22080472891000 expected: 324.57 Actual: 0
+ getGbv_usd is not match for R22080472891000 expected: 324.57 Actual: 0
+ getIbv is not match for R22122824311000 expected: 5895 Actual: 520
+ getIov_usd is not match for R22122824311000 expected: 1572.19 Actual: 138
+ getGbv_usd is not match for R22122824311000 expected: 1572.19 Actual: 520
+ getGbv_usd is not match for R22122824311000 expected: 1572.19 Actual: 138
+ getIov_usd is not match for IDL22080731241000 expected: 40.53 Actual: 40
+ getGbv_usd is not match for IDL22080731241000 expected: 40.53 Actual: 40
+ getIbv is not match for R23021707361000 expected: 404 Actual: 104
+ getIov_usd is not match for R23021707361000 expected: 107.74 Actual: 27
+ getGbv_usd is not match for R23021707361000 expected: 107.74 Actual: 104
+ getGbv_usd is not match for R23021707361000 expected: 107.74 Actual: 27
+ getIbv is not match for R22082336171000 expected: 4992 Actual: 139
+ getIov_usd is not match for R22082336171000 expected: 1331.36 Actual: 37
+ getGbv_usd is not match for R22082336171000 expected: 1331.36 Actual: 139
+ getGbv_usd is not match for R22082336171000 expected: 1331.36 Actual: 37
+ getIbv is not match for TR23022684661000 expected: 152 Actual: 562
+ getIov_usd is not match for TR23022684661000 expected: 40.53 Actual: 150
+ getGbv_usd is not match for TR23022684661000 expected: 40.53 Actual: 562
+ getGbv_usd is not match for TR23022684661000 expected: 40.53 Actual: 150
+ getIbv is not match for R23020421631000 expected: 20998 Actual: 290
+ getIov_usd is not match for R23020421631000 expected: 5600.16 Actual: 77
+ getGbv_usd is not match for R23020421631000 expected: 5600.16 Actual: 290
+ getGbv_usd is not match for R23020421631000 expected: 5600.16 Actual: 77
+ getIbv is not match for R22111005201002 expected: 152 Actual: 1217
+ getIov_usd is not match for R22111005201002 expected: 40.53 Actual: 26
+ getGbv_usd is not match for R22111005201002 expected: 40.53 Actual: 1217
+ getGbv_usd is not match for R22111005201002 expected: 40.53 Actual: 26
+ getIbv is not match for CR22113069141000 expected: 152 Actual: 5895
+ getIov_usd is not match for CR22113069141000 expected: 40.53 Actual: 1572
+ getGbv_usd is not match for CR22113069141000 expected: 40.53 Actual: 5895
+ getGbv_usd is not match for CR22113069141000 expected: 40.53 Actual: 1572
+ getIbv is not match for IDL22080232371000 expected: 365 Actual: 152
+ getIov_usd is not match for IDL22080232371000 expected: 97.34 Actual: 40
+ getGbv_usd is not match for IDL22080232371000 expected: 97.34 Actual: 152
+ getGbv_usd is not match for IDL22080232371000 expected: 97.34 Actual: 40
+ getIbv is not match for R22091208241000 expected: 540 Actual: 404
+ getIov_usd is not match for R22091208241000 expected: 144.01 Actual: 107
+ getGbv_usd is not match for R22091208241000 expected: 144.01 Actual: 404
+ getGbv_usd is not match for R22091208241000 expected: 144.01 Actual: 107
+ getIbv is not match for V22111512961000 expected: 0 Actual: 4992
+ getIov_usd is not match for V22111512961000 expected: 0 Actual: 1331
+ getGbv_usd is not match for V22111512961000 expected: 0 Actual: 4992
+ getGbv_usd is not match for V22111512961000 expected: 0 Actual: 1331
+ getIbv is not match for IDL22122157211000 expected: 0 Actual: 152
+ getIov_usd is not match for IDL22122157211000 expected: 0 Actual: 40
+ getGbv_usd is not match for IDL22122157211000 expected: 0 Actual: 152
+ getGbv_usd is not match for IDL22122157211000 expected: 0 Actual: 40
+ getIbv is not match for R22092747441015 expected: 0 Actual: 20998
+ getIov_usd is not match for R22092747441015 expected: 0 Actual: 5599
+ getGbv_usd is not match for R22092747441015 expected: 0 Actual: 20998
+ getGbv_usd is not match for R22092747441015 expected: 0 Actual: 5599
+ getIbv is not match for IDL22101831481000 expected: 0 Actual: 152
+ getIov_usd is not match for IDL22101831481000 expected: 0 Actual: 40
+ getGbv_usd is not match for IDL22101831481000 expected: 0 Actual: 152
+ getGbv_usd is not match for IDL22101831481000 expected: 0 Actual: 40
+ getIbv is not match for IDL22080770501000 expected: 0 Actual: 152
+ getIov_usd is not match for IDL22080770501000 expected: 0 Actual: 40
+ getGbv_usd is not match for IDL22080770501000 expected: 0 Actual: 152
+ getGbv_usd is not match for IDL22080770501000 expected: 0 Actual: 40
+ getIbv is not match for V23012460201000 expected: 0 Actual: 365
+ getIov_usd is not match for V23012460201000 expected: 0 Actual: 97
+ getGbv_usd is not match for V23012460201000 expected: 0 Actual: 365
+ getGbv_usd is not match for V23012460201000 expected: 0 Actual: 97
+ getIbv is not match for V22122671331000 expected: 0 Actual: 540
+ getIov_usd is not match for V22122671331000 expected: 0 Actual: 144
+ getGbv_usd is not match for V22122671331000 expected: 0 Actual: 540
+ getGbv_usd is not match for V22122671331000 expected: 0 Actual: 144
+]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1577)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at com.seera.database.testingScenarios.compareResults(testingScenarios.java:97)
+	at com.seera.database.testingScenarios.test(testingScenarios.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:258)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:186)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:272)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:669)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</div>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>
